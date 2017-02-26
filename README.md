@@ -1,9 +1,11 @@
 # PDP
 Puerta del Perros con Arduino
 
-An Arduino based system for controlling pedestrian (and canine) access via an existing electric gate that utilises a NICE Mindy A60 gate controller.
+An Arduino based system for controlling pedestrian (and canine) access via an existing electric gate that utilises a NICE Mindy A60 gate controller
+
 Registering cards and the security list.
   A master card controls the registering of operating cards, but cannot operate the gate.
+   
   Learning LED; 
     Off - gate mode (or no power) 
     Flashing - no master card registered 
@@ -73,6 +75,13 @@ Gate operation.
   
   The existing radio remote control for the NICE Mindy gate control unit will continue to work as designed for main gate vehicular access.
 
+Logging
+  If the debug level in the PDP sketch is set to 100 then logging is written to the serial port.  
+  A simple python program "serial_comms" has been developed.  
+  This program monitors the serial port and writes any logging messages recieved to a simple XML file.  
+  An HTML program index.html has been developed.
+  This program uses ajax to read the logging XML file and displays the logging history on a simple webpage.
+
 Technologies;
   Arduino 
   RFID 
@@ -82,5 +91,11 @@ Technologies;
   Relay interfacing to NICE Mindy 
   ADC conversion and mapping 
   Serial comms
+  HTML
+  CSS
+  AJAX
+  XML
+  C
+  Python
 
 This is a fully end user ready solution that is used daily. It is not a prototype.
