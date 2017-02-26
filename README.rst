@@ -74,9 +74,9 @@ Master card
 ***********
 + Tag the master card. 
 + The system goes into learning mode and the gate is not instructed to operate. 
-    
-Known operational card
-**********************
+
+Registered card
+***************
 + Tag a card that is registered on the security list. 
 + A pulse is sent to the gate controller instructing it to open the pedestrian gate. 
 + The "open gate delay time" for the pedestrian gate is set by the delay potentiometer on the PDP hat. 
