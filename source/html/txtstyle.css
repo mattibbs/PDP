@@ -1,0 +1,53 @@
+h1, h2 {text-align: center;}
+html, body {font-family:Helvetica, Arial, sans-serif;background-color: yellow; font-size: 16px;}
+table, th, td, tr {border: none; border-collapse: collapse; align: center}
+th, td {padding: 5px;}
+th {text-align: center;}
+tr, td {text-align: center;}
+
+table {border-spacing: 5px; background-color: yellow;}
+
+table#sensor {background-color: black; color: white; align: center; margin: 0px auto;}
+table#history {background-color: black; color: white; align: center; margin: 0px auto;}
+table#manual {background-color: black; color: white; align: center; margin: 0px auto;}
+
+#submiton {
+	background-color: green; 
+	border: none; 
+	color: white; 
+	padding: 5px 5px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	border-radius: 5px;
+}
+#submiton:hover {
+	border: none;
+	background: darkgreen;
+	box-shadow: 0px, 0px, 1px #777;
+}
+#submiton:disabled {
+	opacity: 0.6;
+	cursor: not-allowed;
+}
+#submitoff {
+        background-color: red; 
+        border: none; 
+        color: white; 
+        padding: 5px 5px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        border-radius: 5px;
+}
+#submitoff:hover {
+        border: none;
+        background: darkred;
+        box-shadow: 0px, 0px, 1px #777;
+}
+#submitoff:disabled {
+	opacity: 0.6;
+	cursor: not-allowed;
+}

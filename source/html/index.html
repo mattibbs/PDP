@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+	<link rel="stylesheet" type="text/css" href="txtstyle.css"  />
+<html>
+
+<head>
+	<title>Test - PDP
+	</title>
+	<link rel="icon" href="./favicon.ico?v=2" type="image/x-icon" />
+    <meta http-equiv="refresh" content="5"/>
+</head>
+
+<h1>Test - PDPd</h1>
+
+<body>
+	<h2>History</h2>
+	<table id="history"></table>
+</body>
+
+<script>
+	loadHistoryXMLDoc();
+
+function loadHistoryXMLDoc() {
+  var xmlhttp = new XMLHttpRequest();
+  xmlhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      myHistoryFunction(this);
+    }
+  };
+  xmlhttp.open("GET", "C:/Users/Matt/Documents/Arduino%20couse%20UGR%20Feb%202017/project/history.xml", true);
+  xmlhttp.send();
+}
+
+function myHistoryFunction(xml) {
+  var i;
+  var xmlDoc = xml.responseXML;
+  var table="<tr><th>Byte0</th><th>Byte1</th><th>Byte2</th><th>Byte3</th><th>Action</th><th>Date</th></tr>";
+  var x = xmlDoc.getElementsByTagName("EVENT");
+  for (i = 0; i <x.length; i++) { 
+    table += "<tr><td>" +
+    x[i].getElementsByTagName("BYTE0")[0].childNodes[0].nodeValue +
+    "</td><td>" +
+    x[i].getElementsByTagName("BYTE1")[0].childNodes[0].nodeValue +
+    "</td><td>" +
+    x[i].getElementsByTagName("BYTE2")[0].childNodes[0].nodeValue +
+    "</td><td>" +
+    x[i].getElementsByTagName("BYTE3")[0].childNodes[0].nodeValue +
+    "</td><td>" +
+    x[i].getElementsByTagName("ACT")[0].childNodes[0].nodeValue +
+    "</td><td>" +	
+    x[i].getElementsByTagName("DATETIME")[0].childNodes[0].nodeValue +
+    "</td></tr>";
+  }
+  document.getElementById("history").innerHTML = table;
+}
+
+</script>
+
+</html>
