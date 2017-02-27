@@ -6,45 +6,45 @@ An Arduino based system for controlling pedestrian (and canine) access via an ex
 
 Registering cards and the security list
 =======================================
-A master card controls the registering and de-registering of operating cards, but cannot operate the gate.
+A Master card controls the registering and de-registering of operating cards, but cannot operate the gate.
     
 Learning LED;
 *************
 + Off- gate mode (or no power).  
-+ Flashing- (with Actiob LED) no master card registered.  
++ Flashing- (with Action LED) no Master card registered.  
 + Flashing- learn mode (returns to gate mode 5 seconds after last learning read).  
     
 Action LED; 
 ***********
 + Off - not activated by a card.  
-+ Flashing - (with Learning LED) no master card registered.
++ Flashing - (with Learning LED) no Master card registered.
 + Flashing - gate moving.
 + Steady - gate about to move. 
     
 No Master
 *********
-+ Initially no cards are registered as the master card or in the security list.
-+ First the master card must be registered.
++ Initially no cards are registered as the Master card or in the security list.
++ First the Master card must be registered.
 + When the Learning and Action LEDs flash alternately and a buzzer will sound.
-+ The first card tagged will be registered as the master card. 
-+ The LEDs will then turn off and the buzzer will stop confirming registration of the master card. 
++ The first card tagged will be registered as the Master card. 
++ The LEDs will then turn off and the buzzer will stop confirming registration of the Master card. 
 + A serial message ###:###:###:###:MDR is sent for logging
 
 To register a card in the security list
 ***************************************
-+ With the LEDs off, tag the master card, the Learning LED flashes and a buzzer sounds. 
++ With the LEDs off, tag the Master card, the Learning LED flashes and a buzzer sounds. 
 + Tag a new card within 5 seconds to register this new card in the security list. 
 + The Learning LED will then turn off and the buzzer will stop, confirming registration of the card in the security list. 
 + A serial message ###:###:###:###:SAV is sent for logging.
     
 To de-register a card from the security list
 ********************************************
-+ Tag the master card to enter learning mode. 
++ Tag the Master card to enter learning mode. 
 + Within 5 seconds tag a card that is already registered in the security list. 
 + This card is now removed from the security list. 
 + The Learning LED will then turn off and the buzzer will stop, confirming de-registration of the card from the security list. 
 + A serial message ###:###:###:###:DEL is sent for logging. 
-+ This method will not remove the master card.
++ This method will not remove the Master card.
     
 To de-register ALL the cards, including the master card 
 *******************************************************
@@ -54,8 +54,8 @@ To de-register ALL the cards, including the master card
 Lost card de-registration
 ************************* 
 + Press the clear memory button on the PDP hat to de-register ALL cards. 
-+ The first card tagged will be registered as the master card. 
-+ Tag the master card and Re-register each available card.
++ The first card tagged will be registered as the Master card. 
++ Tag the Master card and Re-register each available card.
 
 Memory EEPROM/RAM
 *****************
@@ -72,7 +72,7 @@ Unknown card
     
 Master card
 ***********
-+ Tag the master card. 
++ Tag the Master card. 
 + The system goes into learning mode and the gate is not instructed to operate. 
 
 Registered card
